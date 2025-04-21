@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Animated, Modal, Image } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Animated, Modal, Image, Linking } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const questions = [
   {
-    question: 'Выберите признаки объектно-ориентированного программирования',
+    question: 'Выберите один из признаков объектно-ориентированного программирования',
     options: ['Наследование', 'Сортировка', 'Компиляция', 'Циклы'],
     answer: 0,
   },
@@ -15,7 +15,7 @@ const questions = [
   },
   {
     question: 'Какой алгоритм чаще всего используется в языковых моделях?',
-    options: ['Деревья решений', 'Регрессия', 'Градиентный бустинг', 'Transformer'],
+    options: ['Деревья решений', 'Регрессия', 'Градиентный бустинг', 'Трансформер'],
     answer: 3,
   },
   {
@@ -137,14 +137,13 @@ const QuizScreen = () => {
           <View style={styles.modalContent}>
             <Text style={styles.modalTitle}>{win ? '🎉 Вы выиграли!' : '😞 Попробуйте еще раз'}</Text>
             {win && (
-              <Image source={require('../assets/logo_app.png')} style={styles.logo} />
+              <Image source={require('../assets/qr-code.gif')} style={styles.logo} />
             )}
             <TouchableOpacity
               style={styles.modalButton}
               onPress={() => {
                 if (win) {
-                  // 👇 заменишь на свою ссылку
-                  // Linking.openURL('http://...');
+                  Linking.openURL('https://github.com/RostAgroDevTeam/RegulaSearch');
                 } else {
                   restart();
                 }

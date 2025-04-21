@@ -6,7 +6,7 @@ const CropsScreen = () => {
   const navigation = useNavigation();
 
   const crops = [
-    { title: 'Приветсвуем на ИТ конференции - КОД РОСТА 2025', source: require('../assets/logo_app.png'), navigateTo: 'itquiz_test' },
+    { title: 'Приветсвуем на ИТ конференции - КОД РОСТА 2025', source: require('../assets/logo_app.png'), navigateTo: 'itquiz_description' },
   ];
 
   const renderCard = (crop, index) => (

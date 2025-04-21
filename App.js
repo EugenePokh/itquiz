@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import itquiz_test from './src/itquiz_test';
+import itquiz_description from './src/itquiz_description';
 import itquiz_greeting from './src/itquiz_greeting';
 
 const Stack = createNativeStackNavigator();
@@ -35,6 +36,11 @@ export default function App() {
           name="itquiz_greeting"
           component={itquiz_greeting}
           options={{ title: 'Добро пожаловать!' }}
+        />
+        <Stack.Screen
+          name="itquiz_description"
+          component={itquiz_description}
+          options={{ title: 'Описание' }}
         />
         </Stack.Navigator>
       <StatusBar style="auto" />
